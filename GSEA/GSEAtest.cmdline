@@ -1,0 +1,11 @@
+java -cp /anomegap2/seqslab/seqslab/gsea/app/gsea-3.0.jar -Xmx1024m xtools.gsea.Gsea\
+-res gene-expression_collapsed_to_symbols.gct\
+-cls -cls phenotype.cls#Tumor_versus_CTC\
+-gmx ftp.broadinstitute.org://pub/gsea/gene_sets/c5.all.v6.2.symbols.gmt\
+-chip ftp.broadinstitute.org://pub/gsea/annotations/ENSEMBL_mouse_gene.chip\
+-collapse false -mode Max_probe -norm meandiv -nperm 1000 -permute geneset\
+-rnd_type no_balance -scoring_scheme weighted -rpt_label test\
+-metric Signal2Noise -sort real -order descending -include_only_symbols true\
+-make_sets true -median false -num 100 -plot_top_x 20 -rnd_seed timestamp\
+-save_rnd_lists false -set_max 500 -set_min 15 -zip_report false\
+-out /seqslab/gsea/Input/output -gui false

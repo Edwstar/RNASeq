@@ -1,0 +1,3 @@
+# This cmd is used to launch gsea java cmd version
+# Refer to http://software.broadinstitute.org/gsea/doc/GSEAUserGuideFrame.html?Running_Command_Line
+java -cp /anomegap2/seqslab/seqslab/gsea/app/gsea-3.0.jar -Xmx1024m xtools.gsea.Gsea

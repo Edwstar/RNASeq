@@ -1,0 +1,13 @@
+# Compile under anomegap2 folder
+# Java version 1.8.0_191
+
+java -cp /anomegap2/seqslab/seqslab/gsea/app/gsea-3.0.jar -Xmx1024m xtools.gsea.Gsea -res gene.gct -cls phenotype.cls#Tumor_versus_CTC -gmx c5.all.v6.2.symbols.gmt -chip ENSEMBL_mouse_gene.chip -collapse false -mode Max_probe -norm meandiv -nperm 1000 -permute geneset-rnd_type no_balance -scoring_scheme weighted -rpt_label my_analysis -metric Signal2Noise -sort real -order descending -include_only_symbols true-make_sets true -median false -num 100 -plot_top_x 20 -rnd_seed timestamp-save_rnd_lists false -set_max 500 -set_min 15 -zip_report false-out /anomegap2/seqslab/seqslab/gsea/Input/ -gui false
+
+# -cp - class search path of directories and zip/jar files
+# -Xmx - the maximum memories used in this program. According to officel explanation, the max memory can be set as 5000
+# -res - input table file, should contain expected counts/FPKM/RPKM value, sample id and gene id in specific format
+# -cls - phenotype label in specific format
+# -gmx - gene sets for GSEA calculation. Cannot directly connect to GSEA ftp. Must download to local.
+# -chip - chip platform. Use ENSEMBL_mouse_gene.chip for RNAseq. Cannot directly connect to GSEA ftp. Must download to local.
+# -collapse - collapse dataset to gene symbol.
+# -zip_report false-out - output folder
